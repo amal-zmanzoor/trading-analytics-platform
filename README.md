@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+#  Trading Analytics Platform - Amal Zahid Manzoor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
+- Frontend: React + TailwindCSS
+- Backend: FastAPI (Python)
+- Database: In-memory storage (for development)
 
-## Available Scripts
+## Setup and run instructions
+Start by cloning this repository. Then, In the project directory, you can run:
 
-In the project directory, you can run:
+1) In the first terminal : uvicorn main:app --reload
+2) Seed in some data
+   - Open your browser at http://localhost:8000/docs#/default. This is to seed in some trade data. Because we’re using in-memory storage (all data 
+     is wiped on restart), you need to post a batch of trades before the UI will show anything.
+   - Click POST /trades → Try it out → paste in your JSON array of trades (I have put this at the end of this README file) → Execute.
+3) Start the react app:
+   - In a second terminal: run `npm install` followed by  `npm start`
+   - Then, Open [http://localhost:3000](http://localhost:3000) to view it in your browser. For the best view use a 75% zoom on Chrome.
+   - You should now be able to view the dashboard page with the seeded trade data.
 
-### `npm start`
+## Assumptions & Notes
+- **Trade ID format**  
+  All trade IDs follow the pattern `T` + one or more digits (e.g. `T1001`).  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Currency**  
+  All prices are in US dollars (USD).  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Uniqueness constraints**  
+  - **No duplicate trade IDs** allowed — each trade must have a unique identifier.  
+  - **Duplicate commodity names** are allowed, since you may execute multiple trades for the same commodity (e.g. separate orders by different traders or at different times).  
 
-### `npm test`
+- **Mock data for summary cards**  
+  The four “StatsCard” summary cards at the top use hard-coded mock values, purely for UI demonstration.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Main dashboard listing**  
+  I displayed the **five most recent trades** on the homepage (dashboard page) for clarity and simplicity. A full list of all trades (and detailed insights) is accessible via the sidebar navigation.  
 
-### `npm run build`
+- **Possible future enhancements**  
+  There’s plenty more functionality that I thought of adding—e.g.:  
+  - Searching/filtering trades by commodity, trader, date range, etc.  
+  - Sorting and bulk-actions (delete, export)  
+  - Detail modals or drill-down views for individual trades or analytics  
+  - Persisting data to a real database instead of in-memory storage  
+  - User authentication/roles for multiple traders  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+But, decided to keep the project **simple**, **functional**, and easy to review. I’m happy to discuss any of these points or extend the project further through our disussions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Video: Demo of platform
+https://github.com/user-attachments/assets/e541a2c3-948f-46ea-9218-edc2aeafbfba
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Sample Trade data to POST before starting app:
+[
+  {
+    "commodity": "Gold",
+    "traderId": "T123",
+    "price": 2023.50,
+    "quantity": 10,
+    "timestamp": "2025-04-10T15:30:00Z"
+  },
+  {
+    "commodity": "Oil",
+    "traderId": "T456",
+    "price": 85.20,
+    "quantity": 100,
+    "timestamp": "2025-04-10T16:10:00Z"
+  },
+  {
+    "commodity": "Diamond",
+    "traderId": "T932",
+    "price": 9053.90,
+    "quantity": 7,
+    "timestamp": "2025-04-10T19:54:00Z"
+  },
+  {
+    "commodity": "Silver",
+    "traderId": "T781",
+    "price": 62.20,
+    "quantity": 56,
+    "timestamp": "2025-04-10T05:43:00Z"
+  },
+  {
+    "commodity": "Cotton",
+    "traderId": "T354",
+    "price": 43.30,
+    "quantity": 21,
+    "timestamp": "2025-04-10T09:34:00Z"
+  }
+]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
