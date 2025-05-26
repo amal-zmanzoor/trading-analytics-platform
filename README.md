@@ -36,14 +36,14 @@ In the project directory, you can run:
   I displayed the **five most recent trades** on the homepage (dashboard page) for clarity and simplicity. A full list of all trades (and detailed insights) is accessible via the sidebar navigation.  
 
 - **Possible future enhancements**  
-  There’s plenty more functionality that could I thought of adding—e.g.:  
+  There’s plenty more functionality that I thought of adding—e.g.:  
   - Searching/filtering trades by commodity, trader, date range, etc.  
   - Sorting and bulk-actions (delete, export)  
   - Detail modals or drill-down views for individual trades or analytics  
   - Persisting data to a real database instead of in-memory storage  
   - User authentication/roles for multiple traders  
 
-These choices were made to keep the project **simple**, **functional**, and easy to review. I’m happy to discuss any of these points or extend the project further through our disussions.
+But, decided to keep the project **simple**, **functional**, and easy to review. I’m happy to discuss any of these points or extend the project further through our disussions.
 
 ### Video: Demo of platform
 https://github.com/user-attachments/assets/e541a2c3-948f-46ea-9218-edc2aeafbfba
