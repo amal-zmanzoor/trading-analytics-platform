@@ -49,7 +49,7 @@ But, decided to keep the project **simple**, **functional**, and easy to review.
 https://github.com/user-attachments/assets/e541a2c3-948f-46ea-9218-edc2aeafbfba
 
 
-Sample Trade data to POST before starting app:
+### Sample Trade data to POST before starting app:
 [
   {
     "commodity": "Gold",
