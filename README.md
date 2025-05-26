@@ -15,7 +15,7 @@ In the project directory, you can run:
    - Click POST /trades → Try it out → paste in your JSON array of trades (I have put this at the end of this README file) → Execute.
 3) ### Start the react app:
    - In a second terminal:  ### `npm start`
-   - Then, Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   - Then, Open [http://localhost:3000](http://localhost:3000) to view it in your browser. For the best view use a 75% zoom on Chrome.
    - You should now be able to view the dashboard page with the seeded trade data.
 
 ## Assumptions & Notes
@@ -45,8 +45,9 @@ In the project directory, you can run:
 
 These choices were made to keep the project **simple**, **functional**, and easy to review. I’m happy to discuss any of these points or extend the project further through our disussions.
 
-Video:
+### Video: Demo of platform
 https://github.com/user-attachments/assets/e541a2c3-948f-46ea-9218-edc2aeafbfba
+
 
 Sample Trade data to POST before starting app:
 [
