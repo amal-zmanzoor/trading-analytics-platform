@@ -1,4 +1,4 @@
-#  Trading Analytics Platform - Amal Zahid Manzoor
+#  Trading Analytics Platform
 
 ## Tech Stack
 - Frontend: React + TailwindCSS
